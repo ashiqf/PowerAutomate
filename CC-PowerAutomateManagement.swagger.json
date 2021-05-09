@@ -1,0 +1,300 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CC-PowerAutomateManagement",
+    "description": "To test the REST APIs of Power Automate to manage flows",
+    "version": "1.0"
+  },
+  "host": "api.flow.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/providers/Microsoft.ProcessSimple/environments/f5bb3c71-ff8a-41e7-af5e-db33860a4acb/flows/8e140aeb-b160-4b7b-a131-816150a200ac/runs": {},
+    "/providers/Microsoft.ProcessSimple/environments/{FlowEnvironmentGUID}/flows/{FlowGUID}/runs": {},
+    "/providers/Microsoft.ProcessSimple/environments/{FlowEnvironment}/flows/{FlowGUID}/runs": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "startTime": {
+                            "type": "string",
+                            "description": "startTime"
+                          },
+                          "endTime": {
+                            "type": "string",
+                            "description": "endTime"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "status"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          },
+                          "correlation": {
+                            "type": "object",
+                            "properties": {
+                              "clientTrackingId": {
+                                "type": "string",
+                                "description": "clientTrackingId"
+                              },
+                              "clientKeywords": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "clientKeywords"
+                              }
+                            },
+                            "description": "correlation"
+                          },
+                          "trigger": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "inputsLink": {
+                                "type": "object",
+                                "properties": {
+                                  "uri": {
+                                    "type": "string",
+                                    "description": "uri"
+                                  },
+                                  "contentVersion": {
+                                    "type": "string",
+                                    "description": "contentVersion"
+                                  },
+                                  "contentSize": {
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "description": "contentSize"
+                                  },
+                                  "contentHash": {
+                                    "type": "object",
+                                    "properties": {
+                                      "algorithm": {
+                                        "type": "string",
+                                        "description": "algorithm"
+                                      },
+                                      "value": {
+                                        "type": "string",
+                                        "description": "value"
+                                      }
+                                    },
+                                    "description": "contentHash"
+                                  }
+                                },
+                                "description": "inputsLink"
+                              },
+                              "outputsLink": {
+                                "type": "object",
+                                "properties": {
+                                  "uri": {
+                                    "type": "string",
+                                    "description": "uri"
+                                  },
+                                  "contentVersion": {
+                                    "type": "string",
+                                    "description": "contentVersion"
+                                  },
+                                  "contentSize": {
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "description": "contentSize"
+                                  },
+                                  "contentHash": {
+                                    "type": "object",
+                                    "properties": {
+                                      "algorithm": {
+                                        "type": "string",
+                                        "description": "algorithm"
+                                      },
+                                      "value": {
+                                        "type": "string",
+                                        "description": "value"
+                                      }
+                                    },
+                                    "description": "contentHash"
+                                  }
+                                },
+                                "description": "outputsLink"
+                              },
+                              "startTime": {
+                                "type": "string",
+                                "description": "startTime"
+                              },
+                              "endTime": {
+                                "type": "string",
+                                "description": "endTime"
+                              },
+                              "originHistoryName": {
+                                "type": "string",
+                                "description": "originHistoryName"
+                              },
+                              "correlation": {
+                                "type": "object",
+                                "properties": {
+                                  "clientTrackingId": {
+                                    "type": "string",
+                                    "description": "clientTrackingId"
+                                  },
+                                  "clientKeywords": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "description": "clientKeywords"
+                                  }
+                                },
+                                "description": "correlation"
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "status"
+                              },
+                              "sourceHistoryName": {
+                                "type": "string",
+                                "description": "sourceHistoryName"
+                              }
+                            },
+                            "description": "trigger"
+                          },
+                          "error": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string",
+                                "description": "code"
+                              },
+                              "message": {
+                                "type": "string",
+                                "description": "message"
+                              }
+                            },
+                            "description": "error"
+                          }
+                        },
+                        "description": "properties"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get the list of flow runs",
+        "description": "This action will get the list of flows RUNS",
+        "operationId": "GetFlowsRuns",
+        "parameters": [
+          {
+            "name": "FlowEnvironment",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "FlowGUID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/providers/Microsoft.ProcessSimple/environments/{FlowEnvironment}/flows/{FlowGUID}/triggers/manual/histories/{FlowRunID}/resubmit": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Resubmit a flow run",
+        "description": "This action resubmits a flow run",
+        "operationId": "ResubmitFlowRun",
+        "parameters": [
+          {
+            "name": "FlowEnvironment",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "FlowGUID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "FlowRunID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": []
+    }
+  ],
+  "tags": []
+}
