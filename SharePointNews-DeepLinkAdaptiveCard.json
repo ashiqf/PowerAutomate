@@ -1,0 +1,91 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+"msTeams": {
+          "width": "full"
+        },
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "@{triggerOutputs()?['body/BannerImageUrl']}",
+                            "size": "auto"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "@{triggerOutputs()?['body/Title']}",
+                            "wrap": true,
+                            "weight": "Bolder",
+                            "size": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "@{triggerOutputs()?['body/Description']}",
+                            "wrap": true
+                        }
+                    ],
+                    "verticalContentAlignment": "Top"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "@{outputs('Compose-Base64ProfilePic')}",
+                            "size": "Small",
+                            "style": "Person"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "@{triggerOutputs()?['body/Author/DisplayName']}",
+                            "wrap": true,
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "@{formatDateTime(triggerOutputs()?['body/Created'], 'g')}",
+                            "wrap": true,
+                            "spacing": "None",
+                            "isSubtle": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "View News Post",
+                    "url": "@{outputs('Compose-StageViewURL-Encoded')}"
+                }
+            ]
+        }
+    ]
+}
