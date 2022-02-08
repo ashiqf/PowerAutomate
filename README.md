@@ -1,2 +1,2 @@
-# PowerAutomate
-You will find templates or packages for handling different use case using Power Automate
+# Power Automate FLow Runs
+You will find M365 CLI script to cancel or Resubmit all flow runs
